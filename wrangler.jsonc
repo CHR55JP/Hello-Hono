@@ -2,7 +2,18 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hello-hono",
   "main": "src/index.ts",
-  "compatibility_date": "2026-09-07"
+  "compatibility_date": "2026-09-07",
+  "workers_dev": true,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "env": {
+    "production": {
+      "name": "hello-hono-prod",
+      "workers_dev": true
+    }
+  }
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
@@ -30,9 +41,5 @@
   // ],
   // "ai": {
   //   "binding": "AI"
-  // },
-  // "observability": {
-  //   "enabled": true,
-  //   "head_sampling_rate": 1
   // }
 }
